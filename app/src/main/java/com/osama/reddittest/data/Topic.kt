@@ -7,4 +7,7 @@ package com.osama.reddittest.data
  * @property upVotes number of up votes
  * @property downVotes number of down votes
  */
-data class Topic(val body: String, val upVotes: Int, val downVotes: Int)
+data class Topic(
+    val body: String,
+    val upVotes: Int,
+    val downVotes: Int)
