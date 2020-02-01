@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.osama.reddittest.R
 
 class TopicsFragment : Fragment() {
@@ -27,6 +29,21 @@ class TopicsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(TopicsViewModel::class.java)
         // TODO: Use the ViewModel
+
+        setupFab()
     }
 
+    private fun setupFab() {
+        activity?.findViewById<FloatingActionButton>(R.id.fab_add_topic)?.let {
+            it.setOnClickListener {
+                navigateToAddNewTask()
+            }
+        }
+    }
+
+    private fun navigateToAddNewTask() {
+        val action = TopicsFragmentDirections
+            .actionTopicsFragmentToAddTopicFragment()
+        findNavController().navigate(action)
+    }
 }
