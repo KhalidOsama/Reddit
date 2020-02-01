@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/topicsFragment"
         android:name="com.osama.reddittest.ui.topics.TopicsFragment"
-        android:label="topics_fragment"
+        android:label="Topics"
         tools:layout="@layout/topics_fragment" />
 </navigation>
