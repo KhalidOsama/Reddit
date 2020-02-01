@@ -7,11 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.osama.reddittest.R
+import com.osama.reddittest.Utils.CardviewSpacingHelper
+import com.osama.reddittest.data.Topic
+import kotlinx.android.synthetic.main.topics_fragment.*
+import java.util.*
 
 class TopicsFragment : Fragment() {
 
+    private lateinit var topicsAdapter: TopicsAdapter
     companion object {
         fun newInstance() = TopicsFragment()
     }
@@ -27,23 +33,33 @@ class TopicsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TopicsViewModel::class.java)
         // TODO: Use the ViewModel
 
+        setRecyclerView()
         setupFab()
     }
 
     private fun setupFab() {
         activity?.findViewById<FloatingActionButton>(R.id.fab_add_topic)?.let {
             it.setOnClickListener {
-                navigateToAddNewTask()
+                navigateToAddNewTopic()
             }
         }
     }
 
-    private fun navigateToAddNewTask() {
+    private fun navigateToAddNewTopic() {
         val action = TopicsFragmentDirections
             .actionTopicsFragmentToAddTopicFragment()
         findNavController().navigate(action)
     }
+
+    private fun setRecyclerView() {
+        rv_topics.apply {
+            layoutManager = LinearLayoutManager(context)
+            addItemDecoration(CardviewSpacingHelper(30))
+            topicsAdapter = TopicsAdapter()
+            adapter = topicsAdapter
+        }
+    }
+
 }
