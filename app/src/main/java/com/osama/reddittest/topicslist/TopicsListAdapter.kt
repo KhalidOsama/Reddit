@@ -1,4 +1,4 @@
-package com.osama.reddittest.topics
+package com.osama.reddittest.topicslist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import com.osama.reddittest.Utils.DateUtils
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topic_list_item.view.*
 
-class TopicsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TopicsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items : List<Topic> = ArrayList()
 

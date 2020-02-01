@@ -11,5 +11,5 @@ data class Topic(
     val topicId: String,
     val body: String,
     val date: Long,
-    val upVotes: Int,
-    val downVotes: Int)
+    val upVotes: Int? = 0,
+    val downVotes: Int? = 0)
