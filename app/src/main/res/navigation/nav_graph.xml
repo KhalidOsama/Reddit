@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/topicsFragment"
-        android:name="com.osama.reddittest.ui.topics.TopicsFragment"
+        android:name="com.osama.reddittest.topics.TopicsFragment"
         android:label="Topics"
         tools:layout="@layout/topics_fragment" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/addTopicFragment"
-        android:name="com.osama.reddittest.AddTopicFragment"
+        android:name="com.osama.reddittest.addtopics.AddTopicFragment"
         android:label="fragment_add_topic"
         tools:layout="@layout/fragment_add_topic" />
 </navigation>

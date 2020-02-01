@@ -1,4 +1,4 @@
-package com.osama.reddittest.ui.topics
+package com.osama.reddittest.topics
 
 import androidx.lifecycle.ViewModel
 
