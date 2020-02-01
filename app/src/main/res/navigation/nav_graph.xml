@@ -18,5 +18,8 @@
         android:id="@+id/addTopicFragment"
         android:name="com.osama.reddittest.addtopics.AddTopicFragment"
         android:label="New Topic"
-        tools:layout="@layout/add_topic_fragment" />
+        tools:layout="@layout/add_topic_fragment" >
+        <action android:id="@+id/action_addTopicFragment_to_topicsFragment"
+            app:popUpTo="@id/topicsFragment"/>
+    </fragment>
 </navigation>
