@@ -9,3 +9,4 @@ MVVM architecture.
 Single activity app.
 Navigation Component.
 SafeArgs for navigation actions to avoid bugs.
+Gitflow.
