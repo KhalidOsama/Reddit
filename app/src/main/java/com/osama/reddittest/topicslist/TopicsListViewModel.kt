@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.osama.reddittest.data.Topic
-import com.osama.reddittest.data.TopicsRepository
 
 class TopicsListViewModel : ViewModel() {
 
