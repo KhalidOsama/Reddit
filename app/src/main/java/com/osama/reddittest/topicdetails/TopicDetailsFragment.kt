@@ -21,7 +21,8 @@ import kotlinx.android.synthetic.main.topic_details_fragment.*
 class TopicDetailsFragment : Fragment() {
 
     private lateinit var topic: Topic
-    val args: TopicDetailsFragmentArgs by navArgs()
+//    args for retrieving arguments passed when navigating to this fragment
+    private val args: TopicDetailsFragmentArgs by navArgs()
     private val viewModel : TopicsListViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -48,6 +49,7 @@ class TopicDetailsFragment : Fragment() {
         b_upvote.text = topic.upVotes.toString()
         b_downvote.text = topic.downVotes.toString()
         b_upvote.setOnClickListener {
+//            Update the vote count locally first, then update the VM for other observers out there
             b_upvote.text = topic.upVotes.inc().toString()
             viewModel.upvoteTopic(args.topicId)
         }

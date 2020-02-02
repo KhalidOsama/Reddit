@@ -52,22 +52,25 @@ class TopicsListAdapter(private val voteAndSelectInterface: VoteAndSelectInterfa
             bUpvote.text = topic.upVotes.toString()
             bDownvote.text = topic.downVotes.toString()
             bUpvote.setOnClickListener {
-//                inform fragment in order to increment upvote
+//                Update the vote count locally first, then inform fragment in order to increment
+//                votes in VM
                 bUpvote.text = topic.upVotes.inc().toString()
+//                animate item if position has changed
                 notifyItemMoved(adapterPosition, calculateNewPosition(topic.upVotes.inc())?:adapterPosition)
                 voteAndSelectInterface.upVote(topic.topicId)
             }
             bDownvote.setOnClickListener {
-                //                inform fragment in order to increment downvotes
                 bDownvote.text = topic.downVotes.inc().toString()
                 voteAndSelectInterface.downVote(topic.topicId)
             }
             itemView.setOnClickListener{
+//                tell the list fragment to go to the details fragment of this topic
                 voteAndSelectInterface.itemSelected(topic.topicId)
             }
         }
     }
 
+//    Calculate the new position of a newly up-voted topic
     private fun calculateNewPosition(newUpVotes: Int): Int? {
         for ((index, topic) in items.withIndex()) {
             if (topic.upVotes < newUpVotes) {

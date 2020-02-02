@@ -40,8 +40,6 @@ class AddTopicFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
-
         setupFab()
     }
 
@@ -52,7 +50,7 @@ class AddTopicFragment : Fragment() {
 //                    If no content prompt
                     0 -> Snackbar.make(
                         it, // Parent view
-                        "Kindly enter a topic", // Message to show
+                        "Kindly enter a topic", // Message to show if nothing was entered
                         Snackbar.LENGTH_SHORT // How long to display the message.
                     ).show()
 //                    If there is content, add it to the view model and navigate back to the list
@@ -70,6 +68,7 @@ class AddTopicFragment : Fragment() {
                         //Hide keyboard
                         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.hideSoftInputFromWindow(it.windowToken, 0)
+//                        return to the list
                         navigateToTopicsList()
                     }
                 }

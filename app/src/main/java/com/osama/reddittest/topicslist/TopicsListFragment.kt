@@ -67,6 +67,7 @@ class TopicsListFragment : Fragment(){
             addItemDecoration(CardviewSpacingHelper(30))
             topicsListAdapter = TopicsListAdapter(object: VoteAndSelectInterface {
                 override fun upVote(topicId: String) {
+//                    update the VM for other observers out there
                     viewModel.upvoteTopic(topicId)
                 }
 
@@ -74,6 +75,7 @@ class TopicsListFragment : Fragment(){
                     viewModel.downvoteTopic(topicId)
                 }
 
+//                Go to the details of this clicked topic
                 override fun itemSelected(topicId: String) {
                     navigateToTopicDetails(topicId)
                 }
