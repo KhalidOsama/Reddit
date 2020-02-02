@@ -37,7 +37,7 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
     }
 
 
-    class TopicViewHolder(
+    inner class TopicViewHolder(
         itemView: View,
         var upvotesDownvotesInterface: UpvotesDownvotesInterface
     ): RecyclerView.ViewHolder(itemView) {
@@ -54,6 +54,7 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
             bUpvote.setOnClickListener {
 //                inform fragment in order to increment upvote
                 bUpvote.text = topic.upVotes.inc().toString()
+                notifyItemMoved(adapterPosition, calculateNewPosition(topic.upVotes.inc())?:adapterPosition)
                 upvotesDownvotesInterface.upVote(topic.topicId)
             }
             bDownvote.setOnClickListener {
@@ -63,4 +64,14 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
             }
         }
     }
+
+    private fun calculateNewPosition(newUpVotes: Int): Int? {
+        for ((index, topic) in items.withIndex()) {
+            if (topic.upVotes < newUpVotes) {
+                return index
+            }
+        }
+        return null
+    }
+
 }
