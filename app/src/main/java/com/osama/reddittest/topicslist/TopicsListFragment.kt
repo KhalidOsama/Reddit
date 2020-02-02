@@ -18,9 +18,6 @@ import kotlinx.android.synthetic.main.topics_fragment.*
 class TopicsListFragment : Fragment(){
 
     private lateinit var topicsListAdapter: TopicsListAdapter
-    companion object {
-        fun newInstance() = TopicsListFragment()
-    }
 
     private val viewModel : TopicsListViewModel by activityViewModels()
 

@@ -28,8 +28,8 @@
     </fragment>
     <fragment
         android:id="@+id/topicDetailsFragment"
-        android:name="com.osama.reddittest.TopicDetailsFragment"
-        android:label="topic_details_fragment"
+        android:name="com.osama.reddittest.topicdetails.TopicDetailsFragment"
+        android:label="Topic Details"
         tools:layout="@layout/topic_details_fragment" >
         <argument
             android:name="topicId"
