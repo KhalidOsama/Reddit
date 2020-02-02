@@ -36,7 +36,7 @@ class TopicsListFragment : Fragment(){
         val viewModel: TopicsListViewModel by activityViewModels()
         viewModel.getTopics().observe(viewLifecycleOwner,
             Observer<List<Topic>> {
-                topics -> topicsListAdapter.submitList(topics)
+                topics -> topicsListAdapter.submitList(topics.take(20))
             })
         setRecyclerView()
         setupFab()

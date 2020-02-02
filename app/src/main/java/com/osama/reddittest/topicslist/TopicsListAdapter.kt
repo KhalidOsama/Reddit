@@ -47,10 +47,10 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
         val bDownvote = itemView.b_downvote
 
         fun bind(topic: Topic) {
-            topicBody.setText(topic.body)
-            topiDate.setText(DateUtils.printDateFromUtc(topic.date))
-            bUpvote.setText(topic.upVotes.toString())
-            bDownvote.setText(topic.downVotes.toString())
+            topicBody.text = topic.body
+            topiDate.text = (DateUtils.printDateFromUtc(topic.date))
+            bUpvote.text = topic.upVotes.toString()
+            bDownvote.text = topic.downVotes.toString()
             bUpvote.setOnClickListener {
 //                inform fragment in order to increment upvote
                 bUpvote.text = topic.upVotes.inc().toString()
