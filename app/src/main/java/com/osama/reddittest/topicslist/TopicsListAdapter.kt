@@ -9,14 +9,14 @@ import com.osama.reddittest.Utils.DateUtils
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topic_list_item.view.*
 
-class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesInterface) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TopicsListAdapter(private val voteAndSelectInterface: VoteAndSelectInterface) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items : List<Topic> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return TopicViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.topic_list_item, parent, false),
-            upvotesDownvotesInterface
+            voteAndSelectInterface
         )
     }
 
@@ -39,7 +39,7 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
 
     inner class TopicViewHolder(
         itemView: View,
-        var upvotesDownvotesInterface: UpvotesDownvotesInterface
+        var voteAndSelectInterface: VoteAndSelectInterface
     ): RecyclerView.ViewHolder(itemView) {
         val topicBody = itemView.topic_body
         val topiDate = itemView.topic_date
@@ -55,12 +55,15 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
 //                inform fragment in order to increment upvote
                 bUpvote.text = topic.upVotes.inc().toString()
                 notifyItemMoved(adapterPosition, calculateNewPosition(topic.upVotes.inc())?:adapterPosition)
-                upvotesDownvotesInterface.upVote(topic.topicId)
+                voteAndSelectInterface.upVote(topic.topicId)
             }
             bDownvote.setOnClickListener {
                 //                inform fragment in order to increment downvotes
                 bDownvote.text = topic.downVotes.inc().toString()
-                upvotesDownvotesInterface.downVote(topic.topicId)
+                voteAndSelectInterface.downVote(topic.topicId)
+            }
+            itemView.setOnClickListener{
+                voteAndSelectInterface.itemSelected(topic.topicId)
             }
         }
     }

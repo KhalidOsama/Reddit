@@ -56,17 +56,27 @@ class TopicsListFragment : Fragment(){
         findNavController().navigate(action)
     }
 
+    private fun navigateToTopicDetails(topicId: String) {
+        val action = TopicsListFragmentDirections
+            .actionTopicsFragmentToTopicDetailsFragment(topicId)
+        findNavController().navigate(action)
+    }
+
     private fun setRecyclerView() {
         rv_topics.apply {
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(CardviewSpacingHelper(30))
-            topicsListAdapter = TopicsListAdapter(object: UpvotesDownvotesInterface {
+            topicsListAdapter = TopicsListAdapter(object: VoteAndSelectInterface {
                 override fun upVote(topicId: String) {
                     viewModel.upvoteTopic(topicId)
                 }
 
                 override fun downVote(topicId: String) {
                     viewModel.downvoteTopic(topicId)
+                }
+
+                override fun itemSelected(topicId: String) {
+                    navigateToTopicDetails(topicId)
                 }
             })
             adapter = topicsListAdapter

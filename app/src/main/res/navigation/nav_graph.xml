@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_topicsFragment_to_addTopicFragment"
             app:destination="@id/addTopicFragment" />
+        <action
+            android:id="@+id/action_topicsFragment_to_topicDetailsFragment"
+            app:destination="@id/topicDetailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/addTopicFragment"
@@ -21,5 +25,14 @@
         tools:layout="@layout/add_topic_fragment" >
         <action android:id="@+id/action_addTopicFragment_to_topicsFragment"
             app:popUpTo="@id/topicsFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/topicDetailsFragment"
+        android:name="com.osama.reddittest.TopicDetailsFragment"
+        android:label="topic_details_fragment"
+        tools:layout="@layout/topic_details_fragment" >
+        <argument
+            android:name="topicId"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,6 +1,7 @@
 package com.osama.reddittest.topicslist
 
-interface UpvotesDownvotesInterface {
+interface VoteAndSelectInterface {
     fun upVote(topicId: String)
     fun downVote(topicId: String)
+    fun itemSelected(topicId: String)
 }
