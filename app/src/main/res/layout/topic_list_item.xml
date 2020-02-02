@@ -49,15 +49,15 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/colorVote"
+            android:textColor="@color/colorUpVote"
             android:theme="@style/Theme.MaterialComponents"
             app:icon="@drawable/thumb_up_outline"
             app:iconGravity="textStart"
-            app:iconTint="@color/colorVote"
+            app:iconTint="@color/colorUpVote"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:strokeColor="@color/colorVote"
+            app:strokeColor="@color/colorUpVote"
             tools:text="3" />
 
         <com.google.android.material.button.MaterialButton
@@ -68,15 +68,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/colorVote"
+            android:textColor="@color/colorDownVote"
             android:theme="@style/Theme.MaterialComponents"
             app:icon="@drawable/thumb_down_outline"
             app:iconGravity="textStart"
-            app:iconTint="@color/colorVote"
+            app:iconTint="@color/colorDownVote"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:strokeColor="@color/colorVote"
+            app:strokeColor="@color/colorDownVote"
             tools:text="3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

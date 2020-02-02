@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.osama.reddittest.R
-import com.osama.reddittest.utils.DateUtils
 import com.osama.reddittest.data.Topic
 import com.osama.reddittest.topicslist.TopicsListViewModel
+import com.osama.reddittest.utils.DateUtils
 import kotlinx.android.synthetic.main.topic_details_fragment.*
 
 /**

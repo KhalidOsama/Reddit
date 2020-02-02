@@ -20,6 +20,6 @@
         <item name="android:tint">@color/colorAccent</item>
     </style>
 
-    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark"/>
 
 </resources>
