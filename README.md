@@ -12,3 +12,11 @@ Navigation Component.
 SafeArgs for navigation actions to avoid bugs.
 Gitflow.
 Data binding.
+
+# Decisions
+The app supports voting both on the main list and in the topic details screen.
+Repository pattern was not followed because the app was too simple with only the UI as a data source.
+
+# Improvement Suggestions
+The app can be further improved by implementing data binding
+The app can be further improved by implementing more decoupling between V VM M by implementing interfaces between components rather than holding concrete implementation references.
