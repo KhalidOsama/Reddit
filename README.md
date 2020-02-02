@@ -23,3 +23,4 @@ Simple coding challenge of a Reddit-like app
 * The app can be further improved by implementing more decoupling between V VM M by implementing interfaces between components rather than holding concrete implementation references.
 * Using DiffUtils to compare changes to the list.
 * Coroutines for concurrency if need occurs for long operations, however not applicable now.
+* Testing (UI, JUnit and Instrumentation)
