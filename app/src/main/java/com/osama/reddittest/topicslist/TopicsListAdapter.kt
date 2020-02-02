@@ -9,13 +9,14 @@ import com.osama.reddittest.Utils.DateUtils
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topic_list_item.view.*
 
-class TopicsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesInterface) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items : List<Topic> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return TopicViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.topic_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.topic_list_item, parent, false),
+            upvotesDownvotesInterface
         )
     }
 
@@ -35,8 +36,10 @@ class TopicsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         items = topicsList
     }
 
-    class TopicViewHolder constructor(
-        itemView: View
+
+    class TopicViewHolder(
+        itemView: View,
+        var upvotesDownvotesInterface: UpvotesDownvotesInterface
     ): RecyclerView.ViewHolder(itemView) {
         val topicBody = itemView.topic_body
         val topiDate = itemView.topic_date
@@ -48,6 +51,14 @@ class TopicsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             topiDate.setText(DateUtils.printDateFromUtc(topic.date))
             bUpvote.setText(topic.upVotes.toString())
             bDownvote.setText(topic.downVotes.toString())
+            bUpvote.setOnClickListener {
+//                inform fragment in order to increment upvote
+                upvotesDownvotesInterface.upVote(topic.topicId)
+            }
+            bDownvote.setOnClickListener {
+                //                inform fragment in order to increment downvotes
+                upvotesDownvotesInterface.downVote(topic.topicId)
+            }
         }
     }
 }
