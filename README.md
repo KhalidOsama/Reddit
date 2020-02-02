@@ -2,11 +2,11 @@
 Simple coding challenge of a Reddit-like app
 
 # Project Generation
-* The project based is from Android Studio's standard new project wizard.
-* App UI is following Google's template in https://github.com/android/architecture-samples.
+* The project base was generated from Android Studio's standard new project wizard.
+* The app's UI and UX are inspired by Google's template in https://github.com/android/architecture-samples.
 
 # Project Style
-* MVVM architecture as recommended by Google's https://github.com/android/architecture-samples.
+* MVVM architecture as recommended by Google's https://github.com/android/architecture-samples. (Not the full implementation)
 * Single activity app.
 * Navigation Component.
 * SafeArgs for navigation actions to avoid bugs.
@@ -21,3 +21,4 @@ Simple coding challenge of a Reddit-like app
 * The app can be further improved by implementing data binding.
 * The app can be further improved by implementing more decoupling between V VM M by implementing interfaces between components rather than holding concrete implementation references.
 * Using DiffUtils to compare changes to the list.
+* Coroutines for concurrency if need occurs for long operations, however not applicable now.
