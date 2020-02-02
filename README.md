@@ -11,7 +11,6 @@ Single activity app.
 Navigation Component.
 SafeArgs for navigation actions to avoid bugs.
 Gitflow.
-Data binding.
 
 # Decisions/Assumptions
 The app supports voting both on the main list and in the topic details screen.
