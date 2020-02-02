@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.osama.reddittest.R
-import com.osama.reddittest.Utils.CardviewSpacingHelper
+import com.osama.reddittest.utils.CardviewSpacingHelper
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topics_fragment.*
 

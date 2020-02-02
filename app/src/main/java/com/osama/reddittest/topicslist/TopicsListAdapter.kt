@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.osama.reddittest.R
-import com.osama.reddittest.Utils.DateUtils
+import com.osama.reddittest.utils.DateUtils
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topic_list_item.view.*
 

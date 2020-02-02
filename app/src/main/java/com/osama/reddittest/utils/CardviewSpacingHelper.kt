@@ -1,4 +1,4 @@
-package com.osama.reddittest.Utils
+package com.osama.reddittest.utils
 
 import android.graphics.Rect
 import android.view.View

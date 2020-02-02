@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">RedditTest</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="body_hint">Enter you topic here.</string>
+    <string name="app_name">Reddit-Like Osama</string>
+    <string name="body_hint">Enter your topic here.</string>
     <string name="no_topics">You have no topics!</string>
 </resources>

@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.osama.reddittest.R
-import com.osama.reddittest.Utils.DateUtils
+import com.osama.reddittest.utils.DateUtils
 import com.osama.reddittest.data.Topic
 import com.osama.reddittest.topicslist.TopicsListViewModel
 import kotlinx.android.synthetic.main.topic_details_fragment.*
