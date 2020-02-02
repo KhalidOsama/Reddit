@@ -14,6 +14,10 @@ class TopicsListViewModel : ViewModel() {
         return topics
     }
 
+    fun getTopic(topicId: String): Topic? {
+        return _topics.get(topicId)
+    }
+
     fun addTopic(topic: Topic) {
         _topics.put(topic.topicId, topic)
         //        Sort by upvotes descendingly
