@@ -15,14 +15,14 @@ import com.osama.reddittest.Utils.CardviewSpacingHelper
 import com.osama.reddittest.data.Topic
 import kotlinx.android.synthetic.main.topics_fragment.*
 
-class TopicsListFragment : Fragment() {
+class TopicsListFragment : Fragment(){
 
     private lateinit var topicsListAdapter: TopicsListAdapter
     companion object {
         fun newInstance() = TopicsListFragment()
     }
 
-    private lateinit var listViewModel: TopicsListViewModel
+    private val viewModel : TopicsListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,13 +62,12 @@ class TopicsListFragment : Fragment() {
             addItemDecoration(CardviewSpacingHelper(30))
             topicsListAdapter = TopicsListAdapter(object: UpvotesDownvotesInterface {
                 override fun upVote(topicId: String) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    viewModel.upvoteTopic(topicId)
                 }
 
                 override fun downVote(topicId: String) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    viewModel.downvoteTopic(topicId)
                 }
-
             })
             adapter = topicsListAdapter
         }

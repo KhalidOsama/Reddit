@@ -53,10 +53,12 @@ class TopicsListAdapter(private val upvotesDownvotesInterface: UpvotesDownvotesI
             bDownvote.setText(topic.downVotes.toString())
             bUpvote.setOnClickListener {
 //                inform fragment in order to increment upvote
+                bUpvote.text = topic.upVotes.inc().toString()
                 upvotesDownvotesInterface.upVote(topic.topicId)
             }
             bDownvote.setOnClickListener {
                 //                inform fragment in order to increment downvotes
+                bDownvote.text = topic.downVotes.inc().toString()
                 upvotesDownvotesInterface.downVote(topic.topicId)
             }
         }

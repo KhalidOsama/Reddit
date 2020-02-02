@@ -19,4 +19,13 @@ class TopicsListViewModel : ViewModel() {
         topics.postValue(_topics.values.toList())
     }
 
+    fun upvoteTopic(topicId: String) {
+        _topics.get(topicId)?.upVotes = _topics.get(topicId)?.upVotes!!.inc()
+        topics.postValue(_topics.values.toList())
+    }
+
+    fun downvoteTopic(topicId: String) {
+        _topics.get(topicId)?.downVotes = _topics.get(topicId)?.downVotes!!.inc()
+        topics.postValue(_topics.values.toList())
+    }
 }
